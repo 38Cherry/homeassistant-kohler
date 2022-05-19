@@ -47,6 +47,11 @@ class KohlerWaterHeater(WaterHeaterEntity):
         self._unit_of_measurement = self._data.unitOfMeasurement()
 
     @property
+    def unique_id(self):
+        """Return a unique ID."""
+        return self._sensor.id
+    
+    @property
     def supported_features(self):
         """Return the list of supported features."""
         return SUPPORT_FLAGS_HEATER
